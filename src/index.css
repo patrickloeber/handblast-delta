@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0c0a09] text-white antialiased overflow-hidden;
+    cursor: crosshair;
+  }
+}
+
+.bg-game-bg {
+  background-color: #0c0a09;
+  background-image: 
+    radial-gradient(at 10% 10%, #27272a 0px, transparent 50%),
+    radial-gradient(at 50% 90%, #18181b 0px, transparent 50%),
+    radial-gradient(at 90% 10%, #27272a 0px, transparent 50%);
+  position: relative;
+}
+
+.bg-game-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.anim-pulse {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

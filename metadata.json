@@ -1,0 +1,6 @@
+{
+  "name": "HandBlast Delta",
+  "description": "A retro-future space shooter controlled by hand tracking and webcam gestures.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}
