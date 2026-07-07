@@ -1,3 +1,4 @@
+// hand tracking with media pipe
 import { Hands, Results } from '@mediapipe/hands';
 import { Camera } from '@mediapipe/camera_utils';
 
